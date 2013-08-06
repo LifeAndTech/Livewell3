@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+	android:padding="@dimen/activity_margin">
+		
+    <ImageView
+        android:id="@+id/image_androideatapple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        
+	<TextView
+        android:id="@+id/textview_BMR"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:layout_marginLeft="50dp"
+        style="@style/title" />
+        
+	<View
+    	android:id="@+id/whiteLine1"
+		android:layout_width="match_parent"
+		android:layout_height="8dip"
+		android:layout_marginLeft="50dp"
+		android:background="#FFFFFF" 
+		android:layout_below="@+id/textview_BMR" />
+        
+	<TextView
+        android:id="@+id/textview_maintainWeight"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        style="@style/title" 
+        android:layout_below="@+id/whiteLine1" />
+        
+   	<View
+    	android:id="@+id/whiteLine2"
+		android:layout_width="match_parent"
+		android:layout_height="8dip"
+		android:layout_marginLeft="50dp"
+		android:background="#FFFFFF"
+		android:layout_below="@+id/textview_maintainWeight" />
+        
+    <TextView
+        android:id="@+id/textview_loseWeight"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:layout_marginLeft="50dp"
+        style="@style/title"  
+        android:layout_below="@+id/whiteLine2"/>
+        
+	<View
+    	android:id="@+id/horizontalLine"
+    	android:layout_width="match_parent"
+    	android:layout_height="2dip"
+    	android:layout_below="@id/textview_loseWeight"
+    	android:background="#00CCFF" />
+    	
+    <View
+    	android:id="@+id/whiteLine3"
+		android:layout_width="match_parent"
+		android:layout_height="8dip"
+		android:layout_marginLeft="50dp"
+		android:layout_below="@id/horizontalLine"
+		android:background="#FFFFFF" />
+		
+	<Button
+        android:id="@+id/btn_recalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		style="@style/title"  
+        android:text="Recalculate"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@+id/whiteLine3" />
+		
+ 	<Button
+        android:id="@+id/btn_accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		style="@style/title"         
+        android:text="Accept this diet"
+        android:layout_marginLeft="140dp"
+        android:layout_below="@+id/whiteLine3" />
+        
+</RelativeLayout>

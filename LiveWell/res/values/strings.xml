@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Live Well</string>
+    <string name="action_settings">Home</string>
+    <string name="calories">Calories</string>
+    <string name="calendar">Calendar</string>
+    <string name="inspiration">Inspiration</string>
+    <string name="paleo">Paleo Check</string>
+    <string name="foodsnap">Food Snapshot"</string>
+    <string name="title_activity_profile">User Profile</string>
+    <string name="title_bmr">Basal Metabollic Rate</string>
+    <string name="enter">Please enter:</string>
+    <string name="enter_height">Height:</string>
+    <string name="enter_weight">Weight:</string>
+    <string name="enter_age">Age:</string>
+    <string name="enter_goal">Your goal weight:</string>
+    <string name="gender">Gender:</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="typical_exercise">Exercise preference:</string>
+    <string name="exercise_sedentary">Sedentary</string>
+    <string name="exercise_lightly_active">Lightly active</string>
+    <string name="exercise_moderate_active">Moderately active</string>
+    <string name="exercise_very_active">Very active</string>
+    <string name="exercise_extra_active">Extra active</string>
+    <string name="checkbox_agreement">I understand that it is advisable to consult a physician before undertaking a diet</string>
+    <string name="btn_submit">Submit</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_calendar">Calendar</string>
+    <string name="title_activity_calories">Calories</string>
+    <string name="title_activity_sample_calendar">SampleCalendar</string>
+    <string name="title_activity_sample_diet">SampleDiet</string>
+    <string name="spinner_desserts">see calendar resource</string>
+
+    <string-array name="desserts_array">
+        <item>food group</item>
+        <item>protein group</item>
+        <item>dessert group</item>
+        <item>munchie group</item>
+    </string-array>
+
+    <string name="title_activity_food_snapshot">FoodSnapshot</string>
+
+</resources>

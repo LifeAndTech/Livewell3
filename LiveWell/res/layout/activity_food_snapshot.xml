@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="@dimen/activity_margin"
+    tools:context=".FoodSnapshot" >
+
+    <!--  Breakfast -->
+    <TextView
+        android:id="@+id/textview_breakfast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Breakfast" />
+    
+	<View
+    	android:id="@+id/horizontalLine1"
+    	android:layout_width="match_parent"
+    	android:layout_height="2dip"
+    	android:layout_below="@id/textview_breakfast"
+    	android:background="#3366CC" />
+	
+    <View
+    	android:id="@+id/whiteLine1"
+		android:layout_width="match_parent"
+		android:layout_height="8dip"
+		android:layout_below="@id/horizontalLine1"
+		android:background="#FFFFFF" />
+    
+    <ImageButton
+        android:id="@+id/imagebutton_breakfast"
+    	android:layout_width="75dip"
+    	android:layout_height="75dip"
+		android:src="@drawable/foodicon" 
+    	android:adjustViewBounds="true"
+    	android:scaleType="fitXY" 
+        android:layout_below="@id/whiteLine1" />
+    
+   <TextView
+        android:id="@+id/textview_breakfastDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80sp"
+        android:layout_below="@id/whiteLine1" />
+    
+    <!--  Lunch -->
+   	<TextView
+        android:id="@+id/textview_lunch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lunch"         
+        android:layout_below="@id/imagebutton_breakfast" />
+	
+	<View
+    	android:id="@+id/horizontalLine2"
+    	android:layout_width="match_parent"
+    	android:layout_height="2dip"
+    	android:layout_below="@id/textview_lunch"
+    	android:background="#3366CC" />
+	
+    <View
+    	android:id="@+id/whiteLine2"
+		android:layout_width="match_parent"
+		android:layout_height="8dip"
+		android:layout_below="@id/horizontalLine2"
+		android:background="#FFFFFF" />
+    
+    <ImageButton
+        android:id="@+id/imagebutton_lunch"
+    	android:layout_width="75dip"
+    	android:layout_height="75dip" 
+    	android:src="@drawable/foodicon" 
+    	android:adjustViewBounds="true"
+    	android:scaleType="fitXY"
+        android:layout_below="@id/whiteLine2" />
+    
+    <TextView
+        android:id="@+id/textview_lunchDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"         
+        android:layout_marginLeft="80sp"
+        android:layout_below="@id/whiteLine2" />
+    
+    <!--  Dinner -->	
+	<TextView
+        android:id="@+id/textview_dinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dinner"
+        android:layout_below="@id/imagebutton_lunch" />
+	
+	<View
+    	android:id="@+id/horizontalLine3"
+    	android:layout_width="match_parent"
+    	android:layout_height="2dip"
+    	android:layout_below="@id/textview_dinner"
+    	android:background="#3366CC" />
+	
+    <View
+    	android:id="@+id/whiteLine3"
+		android:layout_width="match_parent"
+		android:layout_height="8dip"
+		android:layout_below="@id/horizontalLine3"
+		android:background="#FFFFFF" />
+    
+    <ImageButton
+        android:id="@+id/imagebutton_dinner"
+    	android:layout_width="75dip"
+    	android:layout_height="75dip" 
+    	android:src="@drawable/foodicon" 
+    	android:adjustViewBounds="true"
+    	android:scaleType="fitXY"
+        android:layout_below="@id/whiteLine3" />
+    
+	<TextView
+        android:id="@+id/textview_dinnerDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="80sp"        
+        android:layout_below="@id/whiteLine3" />
+    
+    
+
+</RelativeLayout>

@@ -1,0 +1,282 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="@dimen/activity_margin"
+    tools:context=".Profile" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+    <TextView
+    	android:id="@+id/textView_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_bmr" 
+        style="@style/heading1" />
+    	
+    <View
+    	android:id="@+id/horizontalLine1"
+    	android:layout_width="match_parent"
+    	android:layout_height="2dip"
+    	android:layout_below="@id/textView_profile"
+    	android:background="#3366CC" />
+    <View
+    	android:id="@+id/whiteLine"
+		android:layout_width="match_parent"
+		android:layout_height="8dip"
+		android:layout_below="@id/horizontalLine1"
+		android:background="#FFFFFF" />
+   	
+   	<!-- Please enter: -->
+    <TextView
+    	android:id="@+id/textView_enterData"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="@string/enter"
+    	android:layout_below="@id/whiteLine"
+    	style="@style/heading2" />
+    	
+    <TableRow
+    	android:id="@+id/row1_height"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="@dimen/activity_margin"
+    	android:layout_below="@id/textView_enterData">    	
+    	
+    	<TextView
+    		android:id="@+id/textView_enterHeight"
+    		android:layout_width="55sp"
+    		android:layout_height="wrap_content"
+    		android:text="@string/enter_height"/>
+    	
+    	<EditText
+    	    android:id="@+id/editText_ft"
+    	    style="@style/title"
+    	    android:layout_width="50sp"
+    	    android:layout_height="wrap_content"/>
+  		
+  		<TextView
+    		android:id="@+id/textView_ft"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="ft"/>
+    		
+  		<EditText
+    	    android:id="@+id/editText_in"
+    	    style="@style/title"
+    	    android:layout_width="50sp"
+    	    android:layout_height="wrap_content"/>
+  		
+  		<TextView
+    		android:id="@+id/textView_in"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="in"/>    
+    	    
+   	</TableRow> 	
+	
+	<TableRow
+    	android:id="@+id/row2_weight"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="@dimen/activity_margin"
+    	android:layout_below="@id/row1_height">    	
+    	
+    	<TextView
+    		android:id="@+id/textView_enterWeight"
+    		android:layout_width="55sp"
+    		android:layout_height="wrap_content"
+    		android:text="@string/enter_weight"/>
+    	
+    	<EditText
+    	    android:id="@+id/editText_lbs"
+    	    style="@style/title"
+    	    android:layout_width="50sp"
+    	    android:layout_height="wrap_content"/>
+  		
+  		<TextView
+    		android:id="@+id/textView_lbs"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="lbs"/>  	    
+   	</TableRow>
+   	
+ 	<TableRow
+    	android:id="@+id/row3_age"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="@dimen/activity_margin"
+    	android:layout_below="@id/row2_weight">    	
+    	
+    	<TextView
+    		android:id="@+id/textView_enterAge"
+    		android:layout_width="55sp"
+    		android:layout_height="wrap_content"
+    		android:text="@string/enter_age"/>
+    	
+    	<EditText
+    	    android:id="@+id/editText_yrs"
+    	    style="@style/title"
+    	    android:layout_width="50sp"
+    	    android:layout_height="wrap_content"/>
+  		
+  		<TextView
+    		android:id="@+id/textView_yrs"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="yrs"/>  	    
+   	</TableRow>
+    	
+    <!-- Gender: -->   	
+    <TextView
+    	android:id="@+id/textView_gender"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="@string/gender"
+    	android:layout_below="@id/row3_age"
+    	style="@style/heading2" />
+    	
+    <RadioGroup
+    	android:id="@+id/radioGender"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_below="@id/textView_gender"
+    	android:paddingLeft="@dimen/activity_margin">
+    
+    	<RadioButton
+    		android:id="@+id/radioMale"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		style="@style/title"
+    		android:text="@string/gender_male"
+    		android:checked="true" />
+    	
+    	<RadioButton
+    		android:id="@+id/radioFemale"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		style="@style/title"
+    		android:text="@string/gender_female"
+    		android:checked="false" />		
+    </RadioGroup>
+    
+   	<!-- Typical Excercise: -->   	
+    <TextView
+    	android:id="@+id/textView_typicalExercise"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="@string/typical_exercise"
+    	android:layout_below="@id/radioGender"
+    	style="@style/heading2" />
+    	
+    <RadioGroup
+    	android:id="@+id/radioExercise"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_below="@id/textView_typicalExercise"
+    	android:paddingLeft="@dimen/activity_margin">
+    
+    	<RadioButton
+    		android:id="@+id/radioSedentary"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="@string/exercise_sedentary"
+    		style="@style/title"
+    		android:checked="true" />
+    	
+    	<RadioButton
+    		android:id="@+id/radioLightlyActive"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="@string/exercise_lightly_active"
+    		style="@style/title"
+    		android:checked="false" />	
+    		
+    	<RadioButton
+    		android:id="@+id/radioModeratelyActive"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="@string/exercise_moderate_active"
+    		style="@style/title"
+    		android:checked="false" />
+  		
+  		<RadioButton
+    		android:id="@+id/radioVeryActive"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="@string/exercise_very_active"
+    		style="@style/title"
+    		android:checked="false" />	
+		
+		<RadioButton
+    		android:id="@+id/radioExtraActive"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="@string/exercise_extra_active"
+    		style="@style/title"
+    		android:checked="false" />		
+    </RadioGroup>
+    
+    <!-- Enter Goal Weight: -->
+	<TableRow
+    	android:id="@+id/row4_goalWeight"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="@dimen/activity_margin"
+    	android:layout_below="@id/radioExercise">    	
+    	
+    	<TextView
+    		android:id="@+id/textView_enterGoal"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="@string/enter_goal"
+    		android:layout_below="@id/radioExercise"
+    		style="@style/heading2" />
+    	
+    	<EditText
+    	    android:id="@+id/editText_enterGoal"
+    	    style="@style/title"
+    	    android:layout_width="50sp"
+    	    android:layout_height="wrap_content"
+    	    android:layout_below="@id/textView_enterGoal" />   
+  		
+  		<TextView
+    		android:id="@+id/textView_goalWeight"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="lbs"/> 	    
+   	</TableRow> 	 	    	
+	
+	<View
+    	android:id="@+id/horizontalLine2"
+    	android:layout_width="match_parent"
+    	android:layout_height="2dip"
+    	android:layout_below="@id/row4_goalWeight"
+    	android:background="#3366CC" /> 		
+    
+    <CheckBox 
+    	android:id="@+id/chkAgreement"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:textSize="10dp" 
+    	android:text="@string/checkbox_agreement"
+    	android:layout_below="@id/horizontalLine2"
+    	android:checked="false" />
+    
+    <Button
+        android:id="@+id/btnSubmit"
+        style="@style/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chkAgreement"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/activity_margin"
+        android:text="@string/btn_submit" />
+
+	</RelativeLayout>
+
+</ScrollView>

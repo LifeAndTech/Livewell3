@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/livewellmain"
+    android:padding="@dimen/activity_margin"
+    tools:context=".MainActivity" >
+
+   	<TextView
+   		android:id="@+id/textView_lwlogo"
+   		android:layout_width="wrap_content"
+   		android:layout_height="wrap_content"
+   		android:layout_marginLeft="50dip"
+        android:layout_marginTop="100dip"
+        android:textSize="12sp"
+   		android:text="Eat an apple a day!\nIt's good for your health"/>
+    
+    <Button
+        android:id="@+id/btn_calories"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="100dip"
+        android:layout_marginTop="200dip"
+        android:background="#FCDB49"
+        android:text="@string/calories"
+        android:textColor="@drawable/color_selector"
+        android:textSize="14sp" />
+        
+   	<Button
+		android:id="@+id/btn_calendar" 
+		android:layout_width="80dp"
+		android:layout_height="40dp"
+		android:background="#F94866"
+		android:textColor="@drawable/color_selector"
+		android:textSize="14sp"		
+		android:text="@string/calendar"
+		android:layout_marginLeft="200dip"
+		android:layout_marginTop="200dip" />
+		
+    <View
+    	android:id="@+id/whiteLine"
+		android:layout_width="match_parent"
+		android:layout_height="12dip"
+		android:layout_marginLeft="100dip"
+		android:layout_below="@id/btn_calendar"
+		android:background="#FFFFFF" />
+		
+	<Button
+		android:id="@+id/btn_inspiration" 
+		android:layout_width="80dp"
+		android:layout_height="40dp"
+		android:background="#49E1FC"
+		android:textColor="@drawable/color_selector"
+		android:textSize="14sp"
+		android:text="@string/inspiration"
+		android:layout_marginLeft="100dip"
+		android:layout_below="@id/whiteLine" />
+		
+	<Button
+		android:id="@+id/btn_foodsnap" 
+		android:layout_width="80dp"
+		android:layout_height="40dp"
+		android:background="#D8FC49"
+		android:textColor="@drawable/color_selector"
+		android:textSize="14sp"
+		android:text="@string/foodsnap"
+		android:layout_marginLeft="200dip"
+		android:layout_below="@id/whiteLine"/>
+
+</RelativeLayout>
