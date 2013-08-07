@@ -6,8 +6,9 @@
     <string name="calories">Calories</string>
     <string name="calendar">Calendar</string>
     <string name="inspiration">Inspiration</string>
+    <string name="calculator">Calculator</string>
     <string name="paleo">Paleo Check</string>
-    <string name="foodsnap">Food Snapshot"</string>
+    <string name="foodsnap">Snapshot"</string>
     <string name="title_activity_profile">User Profile</string>
     <string name="title_bmr">Basal Metabollic Rate</string>
     <string name="enter">Please enter:</string>

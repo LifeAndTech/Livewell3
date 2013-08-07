@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 public class MainActivity extends BaseActivity 
 {
-	private Button toCalories, toCalendar, inspiration, toPaleo;
+	private Button toCalories, toCalendar, calculator, toPaleo;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -24,24 +24,21 @@ public class MainActivity extends BaseActivity
 	{
 		toCalories = (Button)findViewById(R.id.btn_calories);
 		toCalendar = (Button)findViewById(R.id.btn_calendar);
-		inspiration = (Button)findViewById(R.id.btn_inspiration);
+		calculator = (Button)findViewById(R.id.btn_calculator);
 		toPaleo = (Button)findViewById(R.id.btn_foodsnap);
 		
 		toCalories.setOnClickListener(new OnClickListener()
 		{
 			@Override
 			public void onClick(View v)
-			{
-				// get button name
-				String name = toCalories.getText().toString().trim();
-				
-				if(name.equals("Calories"))
+			{				
+				if(toCalories.isPressed())
 				{
 					startActivity(new Intent(MainActivity.this, Profile.class));
 				}
 				else
 				{
-					Toast.makeText(MainActivity.this, name, Toast.LENGTH_SHORT).show();
+					Toast.makeText(MainActivity.this, "click somewhere else", Toast.LENGTH_SHORT).show();
 				}
 			}
 		}
@@ -52,30 +49,24 @@ public class MainActivity extends BaseActivity
 			@Override
 			public void onClick(View v)
 			{
-				// get button name
-				String name = toCalendar.getText().toString().trim();
-				
-				if(name.equals("Calendar"))
+				if(toCalendar.isPressed())
 				{
 					startActivity(new Intent(MainActivity.this, SampleCalendar.class));
 				}
 				else
 				{
-					Toast.makeText(MainActivity.this, name, Toast.LENGTH_SHORT).show();
+					Toast.makeText(MainActivity.this, "click somewhere else", Toast.LENGTH_SHORT).show();
 				}
 			}
 		}
 		);
 		
-		inspiration.setOnClickListener(new OnClickListener()
+		calculator.setOnClickListener(new OnClickListener()
 		{
 			@Override
 			public void onClick(View v)
 			{
-				// get button name
-				String name = inspiration.getText().toString().trim();
-				
-				if(name.equals("Inspiration"))
+				if(calculator.isPressed())
 				{
 					Toast.makeText(MainActivity.this, "Diet is the only game where you win when you lose!",
 							Toast.LENGTH_SHORT).show();
@@ -83,7 +74,7 @@ public class MainActivity extends BaseActivity
 				}
 				else
 				{
-					Toast.makeText(MainActivity.this, name, Toast.LENGTH_SHORT).show();
+					Toast.makeText(MainActivity.this, "click somewhere else", Toast.LENGTH_SHORT).show();
 				}
 			}
 		}
@@ -94,16 +85,13 @@ public class MainActivity extends BaseActivity
 			@Override
 			public void onClick(View v)
 			{
-				// get button name
-				String name = toPaleo.getText().toString().trim();
-				
-				if(name.equals("Food Snapshot"))
+				if(toPaleo.isPressed())
 				{
 					startActivity(new Intent(MainActivity.this, FoodSnapshot.class));
 				}
 				else
 				{
-					Toast.makeText(MainActivity.this, name, Toast.LENGTH_SHORT).show();
+					Toast.makeText(MainActivity.this, "click somewhere else", Toast.LENGTH_SHORT).show();
 				}
 			}
 		}

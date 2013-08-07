@@ -110,7 +110,7 @@ public class FoodSnapshot extends BaseActivity
 	
 	private void saveFood(Bitmap pic, int imageID, String imageLocation)
 	{
-		String foodImageFile = "food.png";
+		String foodImageFile = "food" +btnClicked +".png";
 		
 		try
 		{
