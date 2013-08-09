@@ -42,5 +42,8 @@
     </string-array>
 
     <string name="title_activity_food_snapshot">FoodSnapshot</string>
+    <string name="title_activity_food_database">FoodDatabase</string>
+    <string name="title_activity_add_record">AddRecord</string>
+    <string name="title_activity_food_rows">FoodRows</string>
 
 </resources>

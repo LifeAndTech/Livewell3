@@ -68,9 +68,7 @@ public class MainActivity extends BaseActivity
 			{
 				if(calculator.isPressed())
 				{
-					Toast.makeText(MainActivity.this, "Diet is the only game where you win when you lose!",
-							Toast.LENGTH_SHORT).show();
-					//startActivity(new Intent(MainActivity.this, Profile.class));
+					startActivity(new Intent(MainActivity.this, FoodDatabase.class));
 				}
 				else
 				{
