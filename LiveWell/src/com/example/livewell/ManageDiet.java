@@ -70,8 +70,7 @@ public class ManageDiet extends BaseActivity implements OnItemSelectedListener
 		{
 			public void onClick(View v) 
 	        {
-	        	int foodId = spinner.getSelectedItemPosition();
-	        	selectedFood.remove(foodId);
+	        	selectedFood.clear();
 				handleListView();	        	
 	        }
 		});
