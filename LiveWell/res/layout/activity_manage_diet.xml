@@ -1,0 +1,118 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    tools:context=".ManageDiet" >
+
+    <TableLayout
+        android:id="@+id/table_userProfile"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content" >
+    	
+    	<TableRow 
+    	    android:id="@+id/userProfile_row1"
+    	    android:background="#3366CC" >
+    	    
+	        <TextView
+	            android:id="@+id/textview_BMRLabel"
+	            android:layout_width="100dp"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:text="BMR"
+	            android:textColor="#FFFFFF" />
+
+	        <TextView
+	            android:id="@+id/textview_LWCaloriesLabel"
+	            android:layout_width="100dp"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:text="Diet CAL"
+	            android:textColor="#FFFFFF" />
+   	
+	        <TextView
+	            android:id="@+id/textview_RemainingCaloriesLabel"
+	            android:layout_width="100dp"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:text="Remain CAL"
+	            android:textColor="#FFFFFF" />
+
+	    	</TableRow>
+        
+        <TableRow 
+            android:id="@+id/userProfile_row2" >
+	        
+	        <TextView 
+	    		android:id="@+id/textview_BMR"
+	    		android:layout_width="100dp"
+	    		android:layout_height="wrap_content"
+				android:layout_gravity="center" />     
+
+	        <TextView 
+	    		android:id="@+id/textview_LWCalories"
+	    		android:layout_width="100dp"
+	    		android:layout_height="wrap_content" 
+	            android:layout_gravity="center" />
+   	
+	        <TextView 
+	    		android:id="@+id/textview_RemainingCalories"
+	    		android:layout_width="100dp"
+	    		android:layout_height="wrap_content"
+	            android:layout_gravity="center" />
+	    	</TableRow>
+        </TableLayout>
+        
+    	<View
+	    	android:id="@+id/horizontalLine1"
+	    	android:layout_width="match_parent"
+	    	android:layout_height="2dip"
+	    	android:layout_below="@id/table_userProfile"
+	    	android:background="#3366CC" />
+    	
+    	<!-- Spinner Dropdown -->
+	    <Spinner
+	        android:id="@+id/spinner"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:prompt="@string/spinner_title"
+	        style="@style/title"
+			android:layout_below="@id/horizontalLine1" /> 
+
+	    <TableLayout
+	        android:id="@+id/table_buttons"
+        	android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:layout_below="@id/spinner" >
+	        
+	        <TableRow
+	            android:id="@+id/buttons_row1"
+	            android:gravity="center_horizontal" >
+			  	
+			  	<!-- Add Button -->
+			    <Button 
+			        android:id="@+id/btn_add"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="Add" 
+				 	style="@style/title" />
+			        
+				<!-- Delete Button -->
+			    <Button 
+			        android:id="@+id/btn_delete"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="Delete"
+			        style="@style/title" />
+			</TableRow>
+	    </TableLayout>
+	    
+	   	<ListView
+		    android:id="@+id/listview_FoodList"
+		    android:layout_width="fill_parent"
+		    android:layout_height="match_parent" 
+		    android:layout_below="@id/table_buttons" >
+		</ListView>
+		
+</RelativeLayout>
