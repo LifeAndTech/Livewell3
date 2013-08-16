@@ -1,15 +1,20 @@
 package com.example.livewell;
 
 import android.os.Bundle;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends BaseActivity 
 {
-	private Button toCalories, toCalendar, calculator, toPaleo;
+	private TextView nastyGram;
+	
+	SharedPreferences settings;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -17,83 +22,39 @@ public class MainActivity extends BaseActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		addListenerOnButton();
+		settings = getSharedPreferences(SETTINGS_PREFS, Context.MODE_APPEND);
+		
+		initTextBox(R.id.textView_lwlogo, SETTINGS_PREFS_LW_CALORIES);
+		
+		addListenerOnButton(R.id.btn_calories, ManageDiet.class);
+		addListenerOnButton(R.id.btn_calendar, SampleCalendar.class);
+		addListenerOnButton(R.id.btn_calculator, Calculator.class);
+		addListenerOnButton(R.id.btn_foodsnap, FoodSnapshot.class);
+		addListenerOnButton(R.id.btn_profile, Profile.class);
+		addListenerOnButton(R.id.btn_database, SampleDiet.class);	
 	}
 	
-	public void addListenerOnButton()
+	public void initTextBox(int fieldId, String prefKey)
 	{
-		toCalories = (Button)findViewById(R.id.btn_calories);
-		toCalendar = (Button)findViewById(R.id.btn_calendar);
-		calculator = (Button)findViewById(R.id.btn_calculator);
-		toPaleo = (Button)findViewById(R.id.btn_foodsnap);
-		
-		toCalories.setOnClickListener(new OnClickListener()
+		if(settings.contains(prefKey))
 		{
-			@Override
+			TextView view = (TextView)findViewById(fieldId);
+			String text = settings.getString(prefKey, "");
+			view.setText("Your daily calories intake is: " +text);
+		}
+	}
+
+	public void addListenerOnButton(int btnID, final Class destination)
+	{
+		Button button = (Button)findViewById(btnID);
+		
+		button.setOnClickListener(new OnClickListener()
+		{
 			public void onClick(View v)
 			{				
-				if(toCalories.isPressed())
-				{
-					startActivity(new Intent(MainActivity.this, Profile.class));
-				}
-				else
-				{
-					Toast.makeText(MainActivity.this, "click somewhere else", Toast.LENGTH_SHORT).show();
-				}
+				startActivity(new Intent(MainActivity.this, destination));
 			}
-		}
-		);
-		
-		toCalendar.setOnClickListener(new OnClickListener()
-		{
-			@Override
-			public void onClick(View v)
-			{
-				if(toCalendar.isPressed())
-				{
-					startActivity(new Intent(MainActivity.this, SampleCalendar.class));
-				}
-				else
-				{
-					Toast.makeText(MainActivity.this, "click somewhere else", Toast.LENGTH_SHORT).show();
-				}
-			}
-		}
-		);
-		
-		calculator.setOnClickListener(new OnClickListener()
-		{
-			@Override
-			public void onClick(View v)
-			{
-				if(calculator.isPressed())
-				{
-					startActivity(new Intent(MainActivity.this, FoodDatabase.class));
-				}
-				else
-				{
-					Toast.makeText(MainActivity.this, "click somewhere else", Toast.LENGTH_SHORT).show();
-				}
-			}
-		}
-		);
-		
-		toPaleo.setOnClickListener(new OnClickListener()
-		{
-			@Override
-			public void onClick(View v)
-			{
-				if(toPaleo.isPressed())
-				{
-					startActivity(new Intent(MainActivity.this, FoodSnapshot.class));
-				}
-				else
-				{
-					Toast.makeText(MainActivity.this, "click somewhere else", Toast.LENGTH_SHORT).show();
-				}
-			}
-		}
-		);
+		});
 	}
 	
 

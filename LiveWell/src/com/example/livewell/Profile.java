@@ -20,12 +20,23 @@ import android.widget.Toast;
 public class Profile extends BaseActivity 
 {
 	private EditText heightInFeet, heightInInches, age, currentWeight, goalWeight;
-	private double exerciseIndex;
 	private RadioGroup radioGender, radioExercise;
 	private RadioButton radioGenderButton, radioExerciseButton;
 	private CheckBox chkAgreement;
 	private Button submitButton;
 	final Context context = this;
+	
+	// Exercise Index
+	private double exerciseIndex;
+	
+	// Basal Metabolic Rate
+	private int BMR;
+	
+	// Dailies Calories needed to maintain current weight
+	private int maintainWeightCalories;
+	
+	// Dailies Calories needed to lose weight
+	private int loseWeightCalories;
 	
 	SharedPreferences settings;
 	
@@ -82,7 +93,6 @@ public class Profile extends BaseActivity
 		
 		submitButton.setOnClickListener(new OnClickListener()
 		{
-			@Override
 			public void onClick(View v)
 			{
 				// get height
@@ -108,7 +118,7 @@ public class Profile extends BaseActivity
 				
 				if(chkAgreement.isChecked())
 				{
-					// convert String to integer
+					// check the validity of the EditText box
 					if(heightFt.matches("") || heightIn.matches("") || initialWeight.matches("") 
 							|| currentAge.matches("") || wantWeight.matches(""))
 					{
@@ -153,38 +163,34 @@ public class Profile extends BaseActivity
 						ImageView image = (ImageView)dietDialog.findViewById(R.id.image_androideatapple);
 						image.setImageResource(R.drawable.androideatapple);
 						
-						// set custom dialog components
+						// get custom dialog components
 						TextView text1 = (TextView)dietDialog.findViewById(R.id.textview_BMR);
+						TextView text2 = (TextView)dietDialog.findViewById(R.id.textview_maintainWeight);
+						TextView text3 = (TextView)dietDialog.findViewById(R.id.textview_loseWeight);
+						Button recalculateButton = (Button)dietDialog.findViewById(R.id.btn_recalculate);
+						Button acceptButton = (Button)dietDialog.findViewById(R.id.btn_accept);
+						
+						// Display Basal Metabolic Rate based on gender
 						if(gender.equals("Male"))
-						{			
-							double maleBMR = 66+(6.23*wantWeightToInt)+(12.7*heightToInt)-(6.8*ageToInt);
-							text1.setText("Your Basal Metabolic Rate is " +String.format("%.2f",maleBMR));
-							
-							TextView text2 = (TextView)dietDialog.findViewById(R.id.textview_maintainWeight);
-							text2.setText("To maintain your current weight, you will need to intake "
-										+String.format("%.2f",(maleBMR*exerciseIndex)) +" calories daily.");
-							
-							TextView text3 = (TextView)dietDialog.findViewById(R.id.textview_loseWeight);
-							text3.setText("To lose " +weightLost +" lbs in 3 months, you will need to reduce your daily calories intake to "
-										+String.format("%.2f",((maleBMR*exerciseIndex)-(weightLost*3500)/90))+".");
-		
+						{				
+							BMR = getBMR(66, 6.23, 12.7, 6.8, wantWeightToInt, heightToInt, ageToInt);
+							text1.setText("Your Basal Metabolic Rate is " +BMR +"\n");		
 						}
 						else if(gender.equals("Female"))
 						{
-							double femaleBMR = 655+(4.35*wantWeightToInt)+(4.7*heightToInt)-(4.7*ageToInt);
-							text1.setText("Your Basal Metabolic Rate is " +String.format("%.2f",femaleBMR));
-							
-							TextView text2 = (TextView)dietDialog.findViewById(R.id.textview_maintainWeight);
-							text2.setText("To maintain your current weight, you will need to intake "
-										+String.format("%.2f",(femaleBMR*exerciseIndex)) +" calories daily.");
-							
-							TextView text3 = (TextView)dietDialog.findViewById(R.id.textview_loseWeight);
-							text3.setText("To lose " +weightLost +" lbs in 3 months, you will need to reduce your daily calories intake to "
-										+String.format("%.2f",((femaleBMR*exerciseIndex)-(weightLost*3500)/90))+".");
+							BMR = getBMR(655, 4.35, 4.7, 4.7, wantWeightToInt, heightToInt, ageToInt);
+							text1.setText("Your Basal Metabolic Rate is " +BMR +"\n");						
 						}
 						
-						Button recalculateButton = (Button)dietDialog.findViewById(R.id.btn_recalculate);
-						// if button is clicked, close the custom dialog
+						// Display calories need to maintain and lose weight
+						maintainWeightCalories = getMWCalories(BMR, exerciseIndex);
+						loseWeightCalories = getLWCalories(BMR, exerciseIndex, weightLost);	
+						text2.setText("To maintain your current weight, you will need to intake "
+									+maintainWeightCalories +" calories daily.\n");
+						text3.setText("To lose " +weightLost +" lbs in 3 months, you will need to reduce your daily calories intake to "
+									+loseWeightCalories +".\n");
+						
+						// Set OnClickListener on buttons
 						recalculateButton.setOnClickListener(new OnClickListener()
 						{
 							@Override
@@ -195,14 +201,22 @@ public class Profile extends BaseActivity
 							
 						});
 	
-						Button acceptButton = (Button)dietDialog.findViewById(R.id.btn_accept);
-						// if button is clicked, go to the next activity
 						acceptButton.setOnClickListener(new OnClickListener()
 						{
 							@Override
 							public void onClick(View v) 
 							{
-								startActivity(new Intent(Profile.this, SampleDiet.class));
+								saveTextToPrefs(R.id.editText_ft, SETTINGS_PREFS_HEIGHT_FT);
+								saveTextToPrefs(R.id.editText_in, SETTINGS_PREFS_HEIGHT_IN);
+								saveTextToPrefs(R.id.editText_lbs, SETTINGS_PREFS_WEIGHT);
+								saveTextToPrefs(R.id.editText_yrs, SETTINGS_PREFS_AGE);
+								saveTextToPrefs(R.id.editText_enterGoal, SETTINGS_PREFS_GOAL_WEIGHT);
+								saveCalcToPrefs(Integer.toString(BMR), SETTINGS_PREFS_BMR);
+								saveCalcToPrefs(Integer.toString(maintainWeightCalories), SETTINGS_PREFS_MW_CALORIES);
+								saveCalcToPrefs(Integer.toString(loseWeightCalories), SETTINGS_PREFS_LW_CALORIES);
+								saveRadioToPrefs(R.id.radioGender, SETTINGS_PREFS_GENDER, SETTINGS_PREFS_GENDER_ID);
+								saveRadioToPrefs(R.id.radioExercise, SETTINGS_PREFS_EXERCISE, SETTINGS_PREFS_EXERCISE_ID);
+								startActivity(new Intent(Profile.this, MainActivity.class));
 								finish();
 							}
 							
@@ -219,6 +233,32 @@ public class Profile extends BaseActivity
 			}
 		}
 		);
+	}
+	
+	public int getBMR(double x, double y, double z, double w, int weight, int height, int age)
+	{
+		BMR = (int)Math.round(x+(y*weight)+(z*height)-(w*age));
+		return BMR;
+	}
+	
+	public int getMWCalories(double bmrIndex, double exerciseIndex)
+	{
+		maintainWeightCalories = (int)Math.round(BMR * exerciseIndex);
+		return maintainWeightCalories;
+	}
+	
+	public int getLWCalories(double bmrIndex, double exerciseIndex, int weightLost)
+	{
+		loseWeightCalories = (int)Math.round(((BMR*exerciseIndex) - ((weightLost*3500)/90)));
+		return loseWeightCalories;
+	}
+	
+	public void saveCalcToPrefs(String value, String prefKey)
+	{
+		//save text to shared preferences
+		Editor editor = settings.edit();
+		editor.putString(prefKey, value);
+		editor.commit();
 	}
 	
 	public void saveTextToPrefs(int editTextId, String prefKey)

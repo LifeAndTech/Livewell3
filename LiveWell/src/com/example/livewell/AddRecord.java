@@ -38,7 +38,7 @@ public class AddRecord extends BaseActivity {
         	if( foodName == null || nastyName == null)
         	{
         		Toast errorEntry = Toast.makeText(AddRecord.this, 
-        				"Settings were entered incorectly", Toast.LENGTH_LONG);
+        				"Settings were entered incorrectly", Toast.LENGTH_LONG);
         		errorEntry.show();
         	}
         	
@@ -48,11 +48,11 @@ public class AddRecord extends BaseActivity {
         		
         		if(fooddbId == -1)
         		{
-        			Toast successEntry = Toast.makeText(AddRecord.this, "Error adding yo food!!", Toast.LENGTH_LONG);
+        			Toast successEntry = Toast.makeText(AddRecord.this, "Error adding food entry!!", Toast.LENGTH_LONG);
         			return;
         		}
         		
-                 Toast successEntry = Toast.makeText(AddRecord.this, "Yo food z n ther mo!!", Toast.LENGTH_LONG);
+                 Toast successEntry = Toast.makeText(AddRecord.this, "Food entry has been added!!", Toast.LENGTH_LONG);
 	        	 successEntry.show();
                
         	}

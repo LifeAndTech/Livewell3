@@ -3,7 +3,9 @@
 
     <string name="app_name">Live Well</string>
     <string name="action_settings">Home</string>
-    <string name="calories">Calories</string>
+    <string name="create_profile">Profile</string>
+    <string name="database">Database</string>
+    <string name="calories">Enter</string>
     <string name="calendar">Calendar</string>
     <string name="inspiration">Inspiration</string>
     <string name="calculator">Calculator</string>
@@ -33,6 +35,7 @@
     <string name="title_activity_sample_calendar">SampleCalendar</string>
     <string name="title_activity_sample_diet">SampleDiet</string>
     <string name="spinner_desserts">see calendar resource</string>
+    <string name="spinner_title">Food list</string>
 
     <string-array name="desserts_array">
         <item>food group</item>
@@ -45,5 +48,7 @@
     <string name="title_activity_food_database">FoodDatabase</string>
     <string name="title_activity_add_record">AddRecord</string>
     <string name="title_activity_food_rows">FoodRows</string>
+    <string name="title_activity_calculator">Calculator</string>
+    <string name="title_activity_manage_diet">ManageDiet</string>
 
 </resources>

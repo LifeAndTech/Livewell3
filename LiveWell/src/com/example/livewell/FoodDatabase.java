@@ -38,14 +38,14 @@ public class FoodDatabase extends BaseActivity
 	public void onResume() 
 	{
 		super.onResume();
-		initPatientList();
+		initFdstuff();
 	}
 	
 	/*
 	 * get the list of patients from the database
 	 * cycle through them and add them to the list view
 	 */
-	private void initPatientList()
+	private void initFdstuff()
 	{		
 		ArrayList<Foodrs> ppFood = new SQLHelper(this).getStuff();
 		

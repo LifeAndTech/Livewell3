@@ -17,6 +17,9 @@ public class BaseActivity extends Activity
 	public static final String SETTINGS_PREFS_GENDER_ID = "GENDER ID";
 	public static final String SETTINGS_PREFS_EXERCISE = "EXERCISE";
 	public static final String SETTINGS_PREFS_EXERCISE_ID = "EXERCISE ID";
+	public static final String SETTINGS_PREFS_BMR = "BASAL METABOLIC RATE";
+	public static final String SETTINGS_PREFS_MW_CALORIES = "MAINTAIN WEIGHT CALORIES";
+	public static final String SETTINGS_PREFS_LW_CALORIES = "LOSE WEIGHT CALORIES";
 	public static final String SETTINGS_PREFS_DESERTS = "DESERTS";
 	public static final String SETTINGS_PREFS_DESERTS_ID = "DESERTS ID";
 	public static final String SETTINGS_PREFS_BREAKFAST_ID = "BREAKFAST ID";

@@ -2,52 +2,201 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_margin"
+    android:background="#FFFFFF"
+    android:padding="@dimen/activity_margin"
     tools:context=".SampleDiet" >
 	
-    <LinearLayout
-        android:layout_width="match_parent"
-    	android:layout_height="match_parent"
-    	android:orientation="vertical">
-	    
-	<TextView
-    	android:id="@+id/textView_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Diet" 
-        style="@style/heading1" />
-	
-	<View
-    	android:id="@+id/horizontalLine1"
+	<RelativeLayout
     	android:layout_width="match_parent"
-    	android:layout_height="2dip"
-    	android:background="#3366CC" />
-    <View
-    	android:id="@+id/whiteLine"
-		android:layout_width="match_parent"
-		android:layout_height="8dip"
-		android:background="#FFFFFF" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
     
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/spinner_desserts"
-        style="@style/heading2" />
+	    <!-- Add New Food -->
+	    <TextView
+	        android:id="@+id/textview_addFood"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Add New Food" 
+	        style="@style/heading1" />
+	        
+		<View
+	    	android:id="@+id/horizontalLine1"
+	    	android:layout_width="match_parent"
+	    	android:layout_height="2dip"
+	    	android:layout_below="@id/textview_addFood"
+	    	android:background="#3366CC" />
+		
+	    <View
+	    	android:id="@+id/whiteLine1"
+			android:layout_width="match_parent"
+			android:layout_height="8dip"
+			android:layout_below="@id/horizontalLine1"
+			android:background="#FFFFFF" />
+	       
+		<!-- Enter Food Name -->
+	    <TextView
+	        android:id="@+id/textview_foodName"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Food Name: "
+	        android:layout_marginLeft="5dip"
+	        android:layout_below="@id/whiteLine1" 
+	       	style="@style/heading2" />
+	     
+	    <!-- Input Text -->
+	    <EditText 
+	        android:id="@+id/input_foodName"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/whiteLine1"
+	        android:layout_marginLeft="100dip"
+	       	style="@style/title" />
 	    
-    <Spinner 
-        android:id="@+id/spinner_desserts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:prompt="@string/spinner_desserts"/>
+		<View
+	    	android:id="@+id/whiteLine2"
+			android:layout_width="match_parent"
+			android:layout_height="8dip"
+			android:layout_below="@id/input_foodName"
+			android:background="#FFFFFF" />
 	    
-	<Button
-	    android:id="@+id/button_continue" 
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:text="Continue" />
+		<!-- Enter Nasty Gram -->
+	    <TextView
+	        android:id="@+id/textview_nastyGram"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Nasty Gram:"
+	        android:layout_below="@id/whiteLine2"
+	        android:layout_marginLeft="5dip"
+	       	style="@style/heading2" />
+	        
+	    <!-- Input Text -->
+	    <EditText 
+	        android:id="@+id/input_nastyGram"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/whiteLine2"        
+			android:layout_marginLeft="100dip"
+			style="@style/title" />
+		
+		<View
+	    	android:id="@+id/whiteLine3"
+			android:layout_width="match_parent"
+			android:layout_height="8dip"
+			android:layout_below="@id/input_nastyGram"
+			android:background="#FFFFFF" />	    
+	    
+		<!-- Calories -->
+	    <TextView
+	        android:id="@+id/textview_calories"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Calories "
+	        android:layout_below="@id/whiteLine3" 
+			android:layout_marginLeft="5dip"
+	       	style="@style/heading2" />
+	    	        
+	    <!-- Input Text -->
+	    <EditText 
+	        android:id="@+id/input_clCoo"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+			android:layout_below="@id/whiteLine3"
+			android:layout_marginLeft="100dip" 
+			style="@style/title" />
 
-	 </LinearLayout>   
+	    <View
+	    	android:id="@+id/whiteLine4"
+			android:layout_width="match_parent"
+			android:layout_height="8dip"
+			android:layout_below="@id/input_clCoo"
+			android:background="#FFFFFF" />	 
+	    	    	
+	   	<!-- Paleo -->
+	    <TextView
+	        android:id="@+id/textview_paleo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Paleo: "
+	        android:layout_below="@id/whiteLine4" 
+			android:layout_marginLeft="5dip" 
+	       	style="@style/heading2" />
+	    
+		<!-- Input Text -->
+	    <EditText 
+	        android:id="@+id/input_plPoo"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/whiteLine4"
+			android:layout_marginLeft="100dip" 
+			style="@style/title" />
+	    
+		<View
+	    	android:id="@+id/whiteLine5"
+			android:layout_width="match_parent"
+			android:layout_height="8dip"
+			android:layout_below="@id/input_plPoo"
+			android:background="#FFFFFF" />	 
+	     
+	    <!-- Add Button -->
+	    <Button 
+	        android:id="@+id/btn_add"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Add" 
+	        android:layout_below="@id/whiteLine5"
+		 	style="@style/title"
+		 	android:layout_marginLeft="20dip" />
+	        
+		<!-- Delete Button -->
+	    <Button 
+	        android:id="@+id/btn_delete"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Delete"
+	        android:layout_below="@id/whiteLine5"
+	        style="@style/title"
+	        android:layout_marginLeft="140dip" />
+	    
+		<View
+	    	android:id="@+id/whiteLine6"
+	    	android:layout_width="match_parent"
+	    	android:layout_height="4dip"
+	    	android:layout_below="@id/btn_add"
+	    	android:background="#FFFFFF" />
+	     
+	    <!-- Select Food -->
+	    <TextView
+	        android:id="@+id/textview_selectFood"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Select Food from database"
+	       	android:layout_below="@id/whiteLine6"
+			style="@style/heading2" />
+	    
+		<View
+	    	android:id="@+id/horizontalLine2"
+	    	android:layout_width="match_parent"
+	    	android:layout_height="2dip"
+	    	android:layout_below="@id/textview_selectFood"
+	    	android:background="#3366CC" />
+		
+	    <View
+	    	android:id="@+id/whiteLine7"
+			android:layout_width="match_parent"
+			android:layout_height="8dip"
+			android:layout_below="@id/horizontalLine2"
+			android:background="#FFFFFF" />
+	     
+	    <!-- Spinner Dropdown -->
+	    <Spinner
+	        android:id="@+id/spinner"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:prompt="@string/spinner_title"
+	        style="@style/title"
+			android:layout_below="@id/whiteLine7"/> 
+	</RelativeLayout>
+
 </ScrollView>
 
 
